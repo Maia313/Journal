@@ -9,19 +9,19 @@ Det schema där dina tabeller ska ligga i ska heta: journal. Om du inte har döp
 
 Vidare ska dina tabeller ha följande struktur och namn, om dina tabeller inte följer denna struktur får du komplettering oavsett om din kod fungerar eller inte:
 
-  entries entryID 	
-  title 	content 	
-  createdAt 	userID
-  INT (AI)(PK) 	
-  VARCHAR(100) 	
-  VARCHAR(1000) 	
-  DATETIME 	INT
+    entries entryID 	
+    title 	content 	
+    createdAt 	userID
+    INT (AI)(PK) 	
+    VARCHAR(100) 	
+    VARCHAR(1000) 	
+    DATETIME 	INT
 
-  users userID 	
-  username 	password
-  INT (AI)(PK) 	
-  VARCHAR(50) 	
-  VARCHAR(200)
+    users userID 	
+    username 	password
+    INT (AI)(PK) 	
+    VARCHAR(50) 	
+    VARCHAR(200)
 
 ### Struktur av mappar och filer
 
