@@ -14,14 +14,14 @@ if (isset($_GET["message"])) {
 <?php
   if($user->isLoggedIn())
   {
-    require 'partials/view_greeting.php';
-    require 'partials/view_new_entry.php';
-    require 'partials/view_get_all_entries.php';
-    require 'partials/view_edit.php';
+    require 'partials/greeting.php';
+    require 'partials/new_entry.php';
+    require 'partials/all_entries.php';
+    require 'partials/edit.php';
   }
   else
   {
-    require 'partials/view_login_register.php';
+    require 'partials/login.php';
   }
 ?>
 
