@@ -15,8 +15,8 @@ if (isset($_GET["message"])) {
   if($user->isLoggedIn())
   {
     require 'partials/greeting.php';
-    require 'partials/new_entry.php';
-    require 'partials/all_entries.php';
+    require 'partials/post_entry.php';
+    require 'partials/get_all_entries.php';
     require 'partials/edit.php';
   }
   else
