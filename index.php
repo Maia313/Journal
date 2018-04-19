@@ -1,7 +1,7 @@
 <?php
   require 'partials/session_start.php';
   require_once 'partials/head.php';
-  require_once 'classes/UserController.php';
+  require_once 'classes/UsersController.php';
   require_once 'classes/Entry.php';
   $user = new User();
 

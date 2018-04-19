@@ -4,21 +4,26 @@ require_once 'Database.php';
 class User
 {
   private $db;
+  
   public function __construct(){
-    $this->db = DB::connect();
+    $this->db = Database::connect();
   }
+
   public function login($username, $password)
   {
-    // prepare + execute + fetch
+    // first prepare
     $statement = $this->db->prepare(
-      "SELECT * FROM users
-      WHERE username = :username"
+      "SELECT * FROM users WHERE username = :username"
     );
+
+    //then execute
     $statement->execute([
       "username" => $username
     ]);
+
+    //then fetch if credentials valid
     $user = $statement->fetch();
-    // check if valid
+    
     if (password_verify($password, $user["password"])) {
       $_SESSION["loggedIn"] = true;
       $_SESSION["username"] = $user["username"];
@@ -29,19 +34,23 @@ class User
       return false;
     }
   }
-  public function register($username, $password){
-    // hash
+
+  public function register($username, $password)
+  {
     $hashed = password_hash($password, PASSWORD_DEFAULT);
-    // prepare + execute + fetch
+    // first prepare
     $statement = $this->db->prepare(
       "INSERT INTO users (username, password)
       VALUES (:username, :password)"
     );
+
+    //then execute
     $statement->execute([
       ":username" => $username,
       ":password" => $hashed
     ]);
   }
+
   public function isLoggedIn()
   {
     if( isset($_SESSION["loggedIn"]) ){
@@ -50,6 +59,7 @@ class User
       return false;
     }
   }
+  
   public function logout()
   {
     session_unset();
