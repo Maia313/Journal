@@ -4,7 +4,7 @@
   require_once 'classes/UserController.php';
   require_once 'classes/Entry.php';
   $user = new User();
-  
+
     if (isset($_GET["message"])) 
     {
       echo "<div class='message'>" . $_GET["message"] . "</div>";
@@ -24,7 +24,7 @@
     }
     else
     {
-      require 'partials/login.php';
+      require 'partials/signin.php';
     }
   ?>
 
