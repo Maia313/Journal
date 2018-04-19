@@ -4,8 +4,9 @@ class Database
 {
   private static $instance = null;
   private static $pdo;
-  
-  public static function connect(){
+
+  public static function connect()
+  {
     // if instance is not set
       // set the instance + create $pdo connection by running construct
     if(!isset(self::$instance)){
