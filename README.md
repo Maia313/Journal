@@ -1,9 +1,8 @@
 # Journal
 
 > Skapa en personlig journal med PHP & MySQL
-> 
-> **Individuell**
-
+>
+>
 
 ## Uppgift
 
