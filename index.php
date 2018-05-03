@@ -1,34 +1,26 @@
-<?php
-  require 'partials/session_start.php';
-  require_once 'partials/header.php';
-  require_once 'classes/UsersController.php';
-  require_once 'classes/Entry.php';
-  $user = new User();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<?php require_once('partials/head.php'); ?>
+</head>
+<body>
+	<?php require_once('partials/navbar.php'); ?>
+	
+	<div class="container is-half message is-link column box">
+		<?php if(!isset($_SESSION['userID'])): ?> 
+			<div class="message-body">
+				<p class="title">Welcome to your Journal!</p>
+				<p class="subtitle">Please sign in or create user credentials!</p>
+			</div>
+			
+		<?php else:
+		
+			require_once('partials/post_form.php'); 
+			require_once('partials/post_list.php');
+		endif;?>
+	
+	</div>
 
-    if (isset($_GET["message"])) 
-    {
-      echo "<div class='message'>" . $_GET["message"] . "</div>";
-    }
-?>
-
-
-<div class="wrapper">
-
-  <?php
-    if($user->isLoggedIn())
-    {
-      require 'partials/greeting.php';
-      require 'partials/post_entry.php';
-      require 'partials/get_all_entries.php';
-      require 'partials/edit.php';
-    }
-    else
-    {
-      require 'partials/signin.php';
-    }
-  ?>
-
-</div>
-
-
-<?php require 'partials/footer.php'; ?>
+	<?php require_once('partials/footer.php'); ?>
+</body>
+</html>
